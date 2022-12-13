@@ -1,14 +1,11 @@
 pipeline{
-    environment{
-        DOCKERFILE = "Dockerfile"
-    }
-    agent{
-        label "node"
-    }
+    agent any
     stages{
         stage("Build"){
             steps{
-                echo "========executing A========"
+                echo "========executing Build========"
+                sh "mvn -version"
+                sh "mvn clean install"
             }
             post{
                 always{
@@ -26,6 +23,7 @@ pipeline{
     post{
         always{
             echo "========always========"
+            cleanWs()
         }
         success{
             echo "========pipeline executed successfully ========"
