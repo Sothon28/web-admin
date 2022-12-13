@@ -1,0 +1,21 @@
+spring:
+  cache:
+    type: redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?useSSL=false
+    password: postgress
+    username: postgres
+    
+mybatis:
+  mapper-locations:
+  - mapper/*.xml
+  
+  type-aliases-package: com.mcnc.webadmin.models.dtos,com.mcnc.webadmin.models.jwt
+  type-handlers-package: com.mcnc.redis.models
+  
+jwt.key: data key from yml file 
+appinfo.message: messageInfo

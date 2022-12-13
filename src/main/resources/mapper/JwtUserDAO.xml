@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mcnc.webadmin.dao.JwtUserDAO">
+
+	<insert id="registerUser" parameterType="JwtUserDTO">
+		<![CDATA[
+			INSERT INTO public.users
+			(id, name, password)
+			VALUES(#{userId}, #{userName}, #{password});
+			
+		]]>
+	</insert>
+	
+	<select id="getUserDetails" resultType="JwtUserDTO">
+		<![CDATA[ 
+		SELECT 
+			  id 	     AS "userId"
+			, name 	     AS "userName"
+			, password   AS "password" 
+		  FROM USERS  
+		 WHERE name = #{userName}
+		   AND PASSWORD = #{password}
+		]]>
+	</select>
+	
+	<select id="getUserDetaislByUserName" resultType="JwtUserDTO">
+		<![CDATA[ 
+		SELECT 
+			  id 	     AS "userId"
+			, name 	     AS "userName"
+			, password   AS "password" 
+		  FROM USERS  
+		 WHERE name = #{userName}
+		]]>
+	</select>
+
+</mapper>
