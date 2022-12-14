@@ -1,35 +1,20 @@
 pipeline{
     agent any
     stages{
-        stage("Build"){
+        stage("Build Jar"){
             steps{
-                echo "========executing A========"
-                sh "mvn -version"
-                sh "mvn clean install"
-            }
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
-                }
+                echo "========executing Build Jar========"
             }
         }
-    }
-    post{
-        always{
-            echo "========always========"
-            cleanWs()
+        stage("Build Image"){
+            steps{
+                echo "========executing Build Image========"
+            }
         }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
+        stage("Run container"){
+            steps{
+                echo "========executing Run container========"
+            }
         }
     }
 }
