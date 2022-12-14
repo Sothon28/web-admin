@@ -4,6 +4,8 @@ pipeline{
         stage("Build Jar"){
             steps{
                 echo "========executing Build Jar========"
+                sh "ssh -V"
+                sh "mvn -version"
             }
         }
         stage("Build Image"){
