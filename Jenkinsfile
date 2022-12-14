@@ -16,5 +16,10 @@ pipeline{
                 echo "========executing Run container========"
             }
         }
+        stage("Deployment"){
+            steps{
+                echo "========executing Deployment========"
+            }
+        }
     }
 }
