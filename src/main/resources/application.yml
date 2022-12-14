@@ -12,7 +12,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/wbdb?useSSL=false
     username: postgres
     password: 123
-    
 mybatis:
   mapper-locations:
   - mapper/*.xml
@@ -20,5 +19,5 @@ mybatis:
   type-aliases-package: com.mcnc.webadmin.models.dtos,com.mcnc.webadmin.models.jwt
   type-handlers-package: com.mcnc.redis.models
   
-jwt.key: data key from yml file 
-appinfo.message: messageInfo
+#jwt.key: data key from yml file 
+#appinfo.message: messageInfo

@@ -5,7 +5,6 @@ pipeline{
             steps{
                 echo "========executing Build========"
                 sh "mvn -version"
-                sh "mvn clean install"
             }
             post{
                 always{
