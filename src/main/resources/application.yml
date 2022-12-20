@@ -9,7 +9,7 @@ spring:
     port: 6379
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://172.17.0.2:5432/wbdb?useSSL=false
+    url: jdbc:postgresql://172.19.0.4:5432/wbdb?useSSL=false
     username: postgres
     password: 123
 mybatis:
